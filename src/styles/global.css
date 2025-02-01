@@ -1,0 +1,175 @@
+/* Resetovanje osnovnih margina i postavljanje fonta */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(270deg, #1a1a2e, #16213e);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Glavni sadržaj */
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+/* Poboljšani naslov */
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Podnaslovi */
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Tekst */
+p {
+  font-size: 1.1rem;
+  color: #d1d1e0;
+  line-height: 1.8;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Animacija Fade In */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Poboljšani linkovi */
+a {
+  text-decoration: none;
+  color: #ff416c;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff4b2b;
+  text-shadow: 0px 0px 6px rgba(255, 65, 108, 0.6);
+}
+
+/* Dugmad */
+button {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.5);
+}
+
+/* Navigacija */
+nav {
+  background: linear-gradient(135deg, #0f0f1f, #0c0c24);
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff4b2b;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0f0f1f, #0c0c24);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #bbbbdd;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid kontejner */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsivnost */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.2rem;
+  }
+
+  h2 {
+      font-size: 1.8rem;
+  }
+
+  p {
+      font-size: 1rem;
+  }
+
+  button {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+  }
+
+  nav a {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  p {
+      font-size: 0.9rem;
+  }
+
+  button {
+      font-size: 0.85rem;
+      padding: 8px 18px;
+  }
+
+  nav a {
+      font-size: 0.9rem;
+  }
+}

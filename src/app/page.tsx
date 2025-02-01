@@ -1,95 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Header from "@/app/components/header/component";
+import Footer from "@/app/components/footer/component";
+import ArticleCard from "@/app/components/article-card/component";
+import fs from "fs";
+import path from "path";
 
-export default function Home() {
+type NewsItem = {
+  id: number;
+  status: string;
+  userName: string;
+  article: {
+    title: string;
+    url: string;
+    summary: string;
+    source: string;
+    publishedAt: string;
+    imageUrl: string;
+  };
+};
+
+export default function HomePage() {
+  const newsJsonPath = path.join(process.cwd(),"src","app", "data", "news.json");
+
+  // Učitavanje vesti iz `news.json`
+  let news: NewsItem[] = [];
+  try {
+    console.log("Reading news.json...");
+    const jsonData = fs.readFileSync(newsJsonPath, "utf8");
+    news = JSON.parse(jsonData);
+  } catch (error) {
+    console.error("Error reading news.json:", error);
+  }
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+    <div>
+      <Header />
+      <main>
+        <h1>Welcome to News Analytics</h1>
+        <p>Stay updated with the latest news!</p>
+        {news.length === 0 ? (
+          <p>No news available at the moment.</p>
+        ) : (
+          <div className="news-container">
+            {news.map((newsItem) => (
+              <ArticleCard key={newsItem.id} newsItem={newsItem} />
+            ))}
+          </div>
+        )}
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

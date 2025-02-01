@@ -2,21 +2,31 @@
   "name": "news_analytics",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update:bbc": "npx tsx src/data/bbc/updateNewsFile.ts updateNewsFile",
+    "update:bbc-cli": "npx tsx src/client/bbc-update-cli.ts",
+    "update:bloomberg": "npx tsx src/data/bloomberg/updateNewsFile.ts bloomberg",
+    "update:all": "npx tsx src/client/update-news.ts all"
   },
   "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "next": "^15.1.6",
+    "puppeteer": "^24.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "tsx": "^3.14.0",
+    "typescript": "^5"
   }
 }
