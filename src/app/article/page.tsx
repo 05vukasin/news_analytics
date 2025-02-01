@@ -57,16 +57,16 @@ const ArticlePage = () => {
   return (
     <div>
       <Header />
-      <main className="article-container">
+      <main className="articleScr-container">
         <button className="back-button" onClick={() => router.push("/")}>
           <FaArrowLeft /> Back
         </button>
-        <div className="article-content">
-          <img src={articleImage} alt={newsItem.article.title} className="article-image" />
-          <h1 className="article-title">{newsItem.article.title}</h1>
-          <p className="article-summary">{newsItem.article.summary}</p>
-          <p className="article-source">Source: {newsItem.article.source}</p>
-          <p className="article-published">
+        <div className="articleScr-content">
+          <img src={articleImage} alt={newsItem.article.title} className="articleScr-image" />
+          <h1 className="articleScr-title">{newsItem.article.title}</h1>
+          <p className="articleScr-summary">{newsItem.article.summary}</p>
+          <p className="articleScr-source">Source: {newsItem.article.source}</p>
+          <p className="articleScr-published">
             Published on:{" "}
             {new Date(newsItem.article.publishedAt).toLocaleDateString("en-US", {
               year: "numeric",
@@ -77,7 +77,7 @@ const ArticlePage = () => {
           {newsItem.additionalContent && (
             <div className="additional-content">
               {newsItem.additionalContent.map((content) => (
-                <div key={content.id} className="content-section">
+                <div key={content.id} className="content-sectionSrc">
                   <h2>{content.title}</h2>
                   <p>{content.text}</p>
                 </div>

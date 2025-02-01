@@ -29,7 +29,7 @@
 .logo-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Ensures the image scales proportionally */
+  object-fit: cover; /* Ensures the image scales proportionally */
 }
 
 /* Header title styling */

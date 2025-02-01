@@ -1,3 +1,10 @@
+/* Sprečavanje horizontalnog overflow-a na svim uređajima */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 /* Resetovanje osnovnih margina i postavljanje fonta */
 body {
   margin: 0;
@@ -171,5 +178,29 @@ footer {
 
   nav a {
       font-size: 0.9rem;
+  }
+  .main{
+    padding: 4px;
+  }
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Na telefonima (jedna kartica po redu) */
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Tableti i manji ekrani (dve kartice po redu) */
+@media (min-width: 600px) {
+  .news-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Širi ekrani (tri kartice po redu) */
+@media (min-width: 1024px) {
+  .news-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

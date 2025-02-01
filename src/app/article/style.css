@@ -1,5 +1,5 @@
 /* Globalna podešavanja */
-.article-container {
+.articleScr-container {
     max-width: 1000px;
     margin: 50px auto;
     padding: 30px;
@@ -9,7 +9,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.article-container:hover {
+.articleScr-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
 }
@@ -38,7 +38,7 @@
 }
 
 /* Stil za naslov članka */
-.article-title {
+.articleScr-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 15px;
@@ -48,23 +48,24 @@
 }
 
 /* Slika članka */
-.article-image {
+.articleScr-image {
     width: 100%;
-    height:auto;
+    height:200px;
     border-radius: 12px;
     display: block;
     margin: 20px 0;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
+    object-fit:cover;
 }
 
-.article-image:hover {
+.articleScr-image:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
 }
 
 /* Opis i ostale informacije */
-.article-summary {
+.articleScr-summary {
     font-size: 1.3rem;
     color: #d1d1e0;
     text-align: center;
@@ -73,8 +74,8 @@
 }
 
 /* Izvor i datum objavljivanja */
-.article-source,
-.article-published {
+.articleScr-source,
+.articleScr-published {
     font-size: 1rem;
     color: #9a9ab3;
     text-align: center;
@@ -90,7 +91,7 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.content-section {
+.content-sectionSrc {
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 10px;
@@ -99,13 +100,13 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content-section:hover {
+.content-sectionSrc:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Naslov dodatnog sadržaja */
-.content-section h2 {
+.content-sectionSrc h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: #ffffff;
@@ -113,7 +114,7 @@
 }
 
 /* Tekst dodatnog sadržaja */
-.content-section p {
+.content-sectionSrc p {
     font-size: 1.1rem;
     color: #d1d1e0;
     line-height: 1.7;
@@ -131,48 +132,48 @@
     }
 }
 
-.article-content,
-.content-section {
+.articleScr-content,
+.content-sectionSrc {
     animation: fadeIn 0.6s ease-in-out;
 }
 
 /* Responsive stilovi */
 @media (max-width: 1024px) {
-    .article-container {
+    .articleScr-container {
         padding: 20px;
     }
     
-    .article-title {
+    .articleScr-title {
         font-size: 2rem;
     }
     
-    .article-summary {
+    .articleScr-summary {
         font-size: 1.1rem;
     }
 
-    .content-section h2 {
+    .content-sectionSrc h2 {
         font-size: 1.5rem;
     }
 
-    .content-section p {
+    .content-sectionSrc p {
         font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
-    .article-title {
+    .articleScr-title {
         font-size: 1.8rem;
     }
 
-    .article-summary {
+    .articleScr-summary {
         font-size: 1rem;
     }
 
-    .content-section h2 {
+    .content-sectionSrc h2 {
         font-size: 1.3rem;
     }
 
-    .content-section p {
+    .content-sectionSrc p {
         font-size: 0.95rem;
     }
 }

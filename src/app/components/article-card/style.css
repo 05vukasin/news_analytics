@@ -160,21 +160,42 @@
   }
 }
 
+/* Smanjenje paddinga i margina za telefon */
 @media (max-width: 480px) {
+  .article-card {
+    padding: 15px;
+    margin-bottom: 16px;
+  }
+
   .article-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .article-summary {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .read-more-link {
-    font-size: 0.85rem;
-    padding: 8px 18px;
+    font-size: 0.8rem;
+    padding: 6px 16px;
   }
 
   .article-image {
-    height: 180px;
+    height: 160px;
+  }
+  .news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 0;
+    margin:0;
+  }
+}
+
+@media (max-width: 370px) {
+  .news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding: 0;
+    margin:0;
   }
 }
